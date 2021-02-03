@@ -1,0 +1,31 @@
+def main () {
+	// DP-enforcement parameters:
+	epsilon := 1; // epsilon-DP guarantee wanted
+	T := $T$; // threshold
+
+	M := $M$;
+	input := $q$;
+	next := 0;
+	i := 0;
+	sum := 0;
+	out := ([] : R[]);
+
+	for i in [0..input.length) {
+		if i > T {
+
+		} else {
+		    if (i + 1) == M {
+		      eta1 := 0; // wrong part
+		      next = sum + input[i] + eta1;
+		      sum = 0;
+		      out ~= [next];
+		    } else {
+		      eta2 := laplace(0, 1 / epsilon);
+		      next = next + input[i] + eta2;
+		      sum = sum + input[i];
+		      out ~= [next];
+		    }
+		}
+	}
+	return out;
+}

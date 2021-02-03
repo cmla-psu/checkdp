@@ -1,0 +1,35 @@
+def main () {
+	// DP-enforcement parameters:
+	epsilon := 1; // epsilon-DP guarantee wanted
+	T := $T$; // threshold
+
+	N := $NN$;
+	input := $q$;
+
+	rho := laplace(0, 2 / epsilon);
+	out := ([] : R[]);
+	cost := epsilon * N * 2;
+
+	for i in [0..input.length) {
+		if cost > 4 * N * epsilon - 2 * epsilon {
+
+		} else {
+		    eta3 := laplace(0, 8 * N / epsilon);
+		    if input[i] + eta3 < T + rho + 16 {
+		        eta2 := laplace(0, 4 * N / epsilon);
+		        if input[i] + eta2 < T + rho{
+                    // we use -100 to represent False since PSI doesn't support heterogeneous lists
+                    out ~= [-100];
+                } else if input[i] + eta2 >= T + rho {
+                    out ~= [input[i] + eta2 - T - rho];
+                    cost += 2 * epsilon;
+                }
+		    } else if input[i] + eta3 >= T + rho + 16 {
+		        out ~= [input[i] + eta3];
+		        cost += epsilon;
+		    }
+
+		}
+	}
+	return out;
+}

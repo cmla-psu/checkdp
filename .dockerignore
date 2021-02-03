@@ -1,0 +1,14 @@
+*
+!checkdp.h
+!checkdp/
+!examples/
+!scripts/
+!tests/
+!.dockerignore
+!.gitignore
+!setup.cfg
+!setup.py
+!LICENSE
+!README.md
+!*.c
+!*.psi

@@ -1,0 +1,15 @@
+def main () {
+	// DP-enforcement parameters:
+	epsilon := 1; // epsilon-DP guarantee wanted
+	input := $q$;
+	i := 0;
+	sum := 0;
+	out := ([] : R[]);
+
+	for i in [0..input.length) {
+		sum = sum + input[i];
+	}
+	vi := laplace(0, 0.5 / epsilon);
+	out ~= [sum + vi];
+	return out;
+}

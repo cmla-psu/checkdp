@@ -1,0 +1,20 @@
+def main () {
+	// DP-enforcement parameters:
+	epsilon := 1; // epsilon-DP guarantee wanted
+
+	input := $q$;
+	i := 0;
+	bq := 0;
+	max := 0;
+	out := ([] : R[]);
+
+	for i in [0..input.length) {
+	    eta := laplace(0, 2 / epsilon);
+	    if(input[i] + eta > bq || i == 0) {
+	      max = input[i] + eta;
+	      bq = input[i] + eta;
+	    }
+	}
+	out ~= [max];
+	return out;
+}
