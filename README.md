@@ -1,7 +1,5 @@
 # CheckDP 
 
-[![Github Actions](https://github.com/yxwangcs/checkdp/workflows/build/badge.svg)](https://github.com/yxwangcs/checkdp/actions?workflow=build) [![codecov](https://codecov.io/gh/yxwangcs/checkdp/branch/master/graph/badge.svg?token=W3SCBl4IAX)](https://codecov.io/gh/yxwangcs/checkdp)
-
 An automated and integrated tool for proving and disproving Differential Privacy using Programming Language techniques.
 
 # Install via Docker
